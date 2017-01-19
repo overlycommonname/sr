@@ -1,4 +1,5 @@
 import random
+from .tag import Tag
 
 random_range = [-2.6, -2.2, -1.8, -1.5, -1.2, -0.9, -0.8, -0.7, -0.6, -0.5, -0.4, -0.35, -0.3, -0.25, -0.2, -0.15, -0.1, -0.05, 0, 0]
 
@@ -6,6 +7,8 @@ class Modifier(object):
     def __init__(self, tag_or_type, value):
         self.tag_or_type = tag_or_type
         self.value = value
+
+generic_bonus_against_none_tag = Modifier(Tag.none, 0.5)
 
 class Defense(object):
     def __init__(self, value=0, broken_value=0, modifiers=None, hardness=0):

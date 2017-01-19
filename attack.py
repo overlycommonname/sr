@@ -1,4 +1,4 @@
-from . import Type
+from .attack_type import Type
 
 standard_damages = {
     Type.strike: [6, 3, 1],
@@ -31,3 +31,6 @@ class Attack(object):
             print("Fully defended, no damage.")
         else:
             print("Damage: {}, (Special Effect: {})".format(self.resulting_damage(defense_level), self.special))
+
+    def describe(self):
+        return "{} {} damage={}".format(self.tag.name, self.type.name, self.damage)
